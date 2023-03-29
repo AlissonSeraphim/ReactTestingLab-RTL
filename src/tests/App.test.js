@@ -2,11 +2,11 @@ import React from 'react';
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from '../App';
-import renderWithRounter from '../renderWithRouter';
+import renderWithRouter from '../renderWithRouter';
 
 describe('Testes do Componente App.js, redirecionamento e links existentes', () => {
   test('Testa a existência de conjunto fixo de links de navegação', () => {
-    renderWithRounter(<App />);
+    renderWithRouter(<App />);
     const getHomeLink = screen.getByRole('link', { name: /home/i });
     const getAboutLink = screen.getByRole('link', { name: /about/i });
     const getFavoriteLink = screen.getByRole('link', { name: /favorite pokémon/i });
@@ -17,7 +17,7 @@ describe('Testes do Componente App.js, redirecionamento e links existentes', () 
   });
 
   test('Testa o redirecionamento do link Home', () => {
-    renderWithRounter(<App />);
+    renderWithRouter(<App />);
     const getHomeLink = screen.getByRole('link', { name: /home/i });
     userEvent.click(getHomeLink);
 
@@ -26,7 +26,7 @@ describe('Testes do Componente App.js, redirecionamento e links existentes', () 
   });
 
   test('Testa o redirecionamento do link About', () => {
-    renderWithRounter(<App />);
+    renderWithRouter(<App />);
     const getAboutLink = screen.getByRole('link', { name: /about/i });
     userEvent.click(getAboutLink);
 
@@ -35,7 +35,7 @@ describe('Testes do Componente App.js, redirecionamento e links existentes', () 
   });
 
   test('Testa o redirecionamento do link Favorite Pokémon', () => {
-    renderWithRounter(<App />);
+    renderWithRouter(<App />);
     const getFavoriteLink = screen.getByRole('link', { name: /favorite pokémon/i });
     userEvent.click(getFavoriteLink);
 
